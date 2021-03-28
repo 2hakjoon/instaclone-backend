@@ -23,6 +23,7 @@ const typeDefs = gql`
             year:Int!,
             genre:String): Movie
         deleteMovie(id:Int!): Movie
+        updateMovie( id:Int! year: Int!): Movie
     }
 `;
 
@@ -44,6 +45,14 @@ const resolvers = {
         deleteMovie : (_, {id}) => client.movie.delete(
             {where:{
                 id
+            }
+        }),
+        updateMovie : (_, {id, year}) => client.movie.update({
+            where:{
+                id
+            },
+            data:{
+                year
             }
         })
     }
