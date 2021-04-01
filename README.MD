@@ -4,8 +4,8 @@ Instaclone Backend.
 
 ## User : 
 
-- [ ] Create Account
-- [ ] See Profile
+- [X] Create Account
+- [X] See Profile
 - [ ] Login
 - [ ] Edit Profile
 - [ ] Follow User
