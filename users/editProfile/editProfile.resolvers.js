@@ -1,4 +1,5 @@
 import client from "../../client";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 export default {
@@ -8,15 +9,18 @@ export default {
             lastName,
             username,
             email,
-            password : newPassword
-        }) => {
+            password : newPassword,
+        },{loggedInUser}) => {
+            if(!loggedInUser){
+                throw new Error("You need to login.")
+            }
             let uglyPassword = null;
             if(newPassword){
                 uglyPassword = await bcrypt.hash(newPassword, 10)
             }
             const updatedUser = await client.user.update({
                 where:{
-                    id:1
+                    id:loggedInUser.id
                 },
                 data:{
                     firstName,
