@@ -12,7 +12,7 @@ export default {
             if(!ok){
                 return{
                     ok:false,
-                    error: "Cant't unfollow user"
+                    error: "Cant unfollow user"
                 };
             }
             await client.user.update({
