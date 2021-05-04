@@ -20,7 +20,7 @@ export default {
                     id:loggedInUser.id
                 },
                 data:{
-                    following:{
+                    followings:{
                         disconnect:{
                             username,
                         }

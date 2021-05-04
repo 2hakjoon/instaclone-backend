@@ -13,5 +13,4 @@ Instaclone Backend.
 - [X] Unfollow User
 - [X] See Followers offset based Pagination
 - [X] See Following cursor based Pagination
-- [ ] Computed Fields
-- [ ] Change Avatar (Image Upload)
+- [X] Computed Fields

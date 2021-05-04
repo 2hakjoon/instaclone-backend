@@ -18,7 +18,7 @@ export default{
                 where:{
                     username
                 }
-            }).following({
+            }).followings({
                 take:5,
                 skip: lastId ? 1 : 0,
                 ...(lastId && {cursor: {id : lastId}})
@@ -26,7 +26,7 @@ export default{
 
             const totalFollowings = await client.user.count({
                 where:{
-                    following:{
+                    followings:{
                         some:{
                             username
                         }
