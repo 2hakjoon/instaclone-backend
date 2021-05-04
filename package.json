@@ -22,12 +22,14 @@
   "dependencies": {
     "@prisma/client": "^2.21.2",
     "apollo-server": "^2.22.1",
+    "apollo-server-express": "^2.24.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "graphql": "^15.5.0",
     "graphql-tools": "^7.0.4",
     "jsonwebtoken": "^8.5.1",
-    "npm-force-resolutions": "0.0.10"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
@@ -39,6 +41,7 @@
     "prisma": "^2.21.2"
   },
   "resolutions": {
-    "hoek": "4.2.1"
+    "fs-capacitor": "^6.2.0",
+    "graphql-upload": "^11.0.0"
   }
 }

@@ -15,12 +15,16 @@ export default {
                 bio,
                 avatar
             },{loggedInUser}) => {
-                const {filename, createReadStream} = await avatar;
-                console.log(filename, createReadStream);
-                const readStream = createReadStream();
-                const writeStream = createWriteStream(process.cwd()+"/uploads/"+filename);
-                readStream.pipe(writeStream)
-                console.log(stream)
+                let avatarUrl = null;
+                if(avatar){
+                    const {filename, createReadStream} = await avatar;
+                    const ext = filename.split(".")[1];
+                    const newFilename = `${loggedInUser.id}.${ext}`
+                    const readStream = createReadStream();
+                    const writeStream = createWriteStream(process.cwd()+"/uploads/"+ newFilename);
+                    readStream.pipe(writeStream);
+                    avatarUrl=`http://localhost:4000/static/${newFilename}`
+                }
                 let uglyPassword = null;
                 if(newPassword){
                     uglyPassword = await bcrypt.hash(newPassword, 10)
@@ -36,6 +40,7 @@ export default {
                         email,
                         bio,
                         ...(uglyPassword && {password: uglyPassword}),
+                        ...(avatarUrl && {avatar: avatarUrl})
                     }
                 });
                 if(updatedUser.id){
