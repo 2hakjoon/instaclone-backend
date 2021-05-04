@@ -33,7 +33,11 @@ export default {
                 }})
             }
             catch(e){
-                return e;
+                return {
+                    ok: false,
+                    error : "Cant create account."
+                }
+
             }
         }
     },
