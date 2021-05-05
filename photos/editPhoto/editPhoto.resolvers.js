@@ -18,14 +18,13 @@ export default{
                     }
                 }
             })
-            console.log(oldPhoto)
             if(!oldPhoto){
                 return{
                     ok:false,
                     error:"Photo not found."
                 }
             }
-            const photo = await client.photo.update({
+            await client.photo.update({
                 where:{
                     id
                 },
@@ -37,7 +36,9 @@ export default{
                     }
                 }
             })
-            console.log(photo)
+            return {
+                ok:true,
+            }
         })
     }
 }
