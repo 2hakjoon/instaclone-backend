@@ -14,3 +14,19 @@ Instaclone Backend.
 - [X] See Followers offset based Pagination
 - [X] See Following cursor based Pagination
 - [X] Computed Fields
+
+## Photos
+
+- [ ] Upload Photo (Parse #)
+- [ ] See Photo
+- [ ] See Hashtags
+- [ ] Search Photos
+- [ ] Like /Unlike Photo
+- [ ] Edit Photo
+- [ ] See Photo Likes
+- [ ] See Feed
+
+## Comments
+- [ ] Comment on Photo
+- [ ] Edit Comment
+- [ ] Delete Comment
