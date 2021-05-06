@@ -17,7 +17,9 @@ export default {
                 }
             })
         },
-        likes: ({id}) => client.like.count({where : {photoId : id}})
+        likes: ({id}) => client.like.count({where : {photoId : id}}),
+        comments:({id})=> client.photo.findUnique({where:{id}}).comments(),
+        totalComments:({id}) => client.comment.count({where:{photoId:id}})
     },
     Hashtag:{
         photos: ({id}, {page}) => {

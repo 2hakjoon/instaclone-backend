@@ -6,7 +6,7 @@ export default {
   Query: {
     seeFeed: protectedResolver(async (_, {pageNumber, pageSize}, { loggedInUser }) => {
       return client.photo.findMany({
-        skip:(pageSize-1)*pageNumber,
+        skip:(pageNumber-1)*pageSize,
         take:pageSize,
         where: {
           OR: [
