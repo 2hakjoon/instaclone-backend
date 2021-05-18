@@ -7,9 +7,7 @@ export default {
                 id
             }
         }).users(),
-        messages:({id}, {pageNumber, pageSize}) => client.message.findMany({
-            skip:(pageNumber-1)*pageSize,
-            take:pageSize,
+        messages:({id}) => client.message.findMany({
             where:{
                 roomId:id
             }
@@ -30,5 +28,12 @@ export default {
                 }
             })
         }
+    },
+    Message:{
+        user: ({id}) => client.message.findUnique({
+            where:{
+                id
+            }
+        }).user()
     }
 }
